@@ -16,19 +16,19 @@ public class Main {
             System.out.print("Гипотенуза: ");
             int c = coordinate.nextInt();
 
-            if ((pow(a, 2) + pow(b, 2) == pow(c, 2)) |
-                    (pow(c, 2) + pow(b, 2) == pow(a, 2)) |
-                    (pow(a, 2) + pow(c, 2) == pow(b, 2))){
-                System.out.println("Прямоугольный треугольник!");
+            if (!(a + b > c && b + c > a && c + a > b)){
+                System.out.println("Не являются сторонами треугольника!");
             }
-            else if ((a == b && a != c) || (b == c && b != a) || (c == a && c != b)){
+            else if ((a == b && (a & b) != c)){
                 System.out.println("Равнобедренный треугольник!");
             }
             else if (a == b & b == c){
                 System.out.println("Равносторонний треугольник!");
             }
-            else if (!(a + b > c | b + c > a | c + a > b)){
-                System.out.println("Не являются сторонами треугольника!");
+            else if ((pow(a, 2) + pow(b, 2) == pow(c, 2)) |
+                        (pow(c, 2) + pow(b, 2) == pow(a, 2)) |
+                        (pow(a, 2) + pow(c, 2) == pow(b, 2))){
+                    System.out.println("Прямоугольный треугольник!");
             }
             else {
                 System.out.println("Обычный треугольникы!");
